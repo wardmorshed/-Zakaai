@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily updates on currency exchange rates, gold prices, and fuel prices. Live dashboard, detailed pages, and expert analysis.">
+    <meta name="keywords" content="currency rates, gold prices, fuel prices, exchange rates, forex, commodities">
+    <title>PriceHub - Live Currency, Gold & Fuel Prices</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            color: #007bff;
+            font-weight: 700;
+        }
+        .nav-link {
+            color: #6c757d;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: #007bff;
+        }
+        .hero {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 500;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .dashboard-card {
+            background: white;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+        }
+        .dashboard-card h3 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .price-table th, .price-table td {
+            padding: 10px;
+            text-align: right;
+            border-bottom: 1px solid #ddd;
+        }
+        .price-table th {
+            background-color: #e9ecef;
+            color: #007bff;
+        }
+        .update-time {
+            font-size: 0.9rem;
+            color: #6c757d;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .ad-top {
+            background: #e9ecef;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .ad-sidebar {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 5px;
+            height: fit-content;
+            margin-bottom: 20px;
+        }
+        .blog-post {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .blog-post h4 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        footer {
+            background: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .dashboard-card {
+                padding: 15px;
+            }
+            .price-table th, .price-table td {
+                padding: 8px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#dashboard">PriceHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#dashboard">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#currencies">Currencies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gold">Gold</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#fuel">Fuel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero/Dashboard Section -->
+    <section id="dashboard" class="hero">
+        <div class="container">
+            <h1>Live Prices Dashboard</h1>
+            <p>Stay updated with real-time currency exchange rates, gold prices, and fuel costs. Data updates every 5 minutes.</p>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h3>USD to EUR</h3>
+                        <p class="display-4">1.08</p>
+                        <small class="text-success">+0.02%</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h3>Gold (per oz)</h3>
+                        <p class="display-4">$1,950</p>
+                        <small class="text-danger">-0.5%</small>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="dashboard-card">
+                        <h3>Gasoline (per gallon)</h3>
+                        <p class="display-4">$3.45</p>
+                        <small class="text-success">+0.1%</small>
+                    </div>
+                </div>
+            </div>
+            <p class="update-time mt-3">Last updated: <span id="updateTime"></span></p>
+        </div>
+    </section>
+
+    <!-- Top Ad -->
+    <div class="container mt-5">
+        <div class="ad-top">
+            <p>Advertisement: Forex Trading Platform - Start Trading Today!</p>
+            <!-- Placeholder for ad script -->
+        </div>
+    </div>
+
+    <!-- Currencies Section -->
+    <section id="currencies" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Currency Exchange Rates</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="dashboard-card">
+                        <h3>Live Currency Rates (USD Base)</h3>
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Currency</th>
+                                    <th>Rate</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>EUR</td>
+                                    <td>0.92</td>
+                                    <td class="text-success">+0.02</td>
+                                </tr>
+                                <tr>
+                                    <td>GBP</td>
+                                    <td>0.78</td>
+                                    <td class="text-danger">-0.01</td>
+                                </tr>
+                                <tr>
+                                    <td>JPY</td>
+                                    <td>145.50</td>
+                                    <td class="text-success">+0.15</td>
+                                </tr>
+                                <tr>
+                                    <td>CAD</td>
+                                    <td>1.35</td>
+                                    <td class="text-danger">-0.03</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="update-time">Data updated automatically every 5 minutes via API (demo data).</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ad-sidebar sticky-top">
+                        <p>Sidebar Ad: Gold Investment Opportunities</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gold Section -->
+    <section id="gold" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Gold Prices</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="dashboard-card">
+                        <h3>Live Gold Prices</h3>
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Price (USD)</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Spot Gold (per oz)</td>
+                                    <td>$1,950</td>
+                                    <td class="text-danger">-0.5%</td>
+                                </tr>
+                                <tr>
+                                    <td>Gold Futures</td>
+                                    <td>$1,955</td>
+                                    <td class="text-success">+0.2%</td>
+                                </tr>
+                                <tr>
+                                    <td>Silver (per oz)</td>
+                                    <td>$24.50</td>
+                                    <td class="text-danger">-1.1%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="update-time">Live updates from commodity exchanges (demo data).</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ad-sidebar sticky-top">
+                        <p>Sidebar Ad: Buy Gold Online Securely</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fuel Section -->
+    <section id="fuel" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">Fuel Prices</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="dashboard-card">
+                        <h3>Live Fuel Prices (US Average)</h3>
+                        <table class="price-table">
+                            <thead>
+                                <tr>
+                                    <th>Fuel Type</th>
+                                    <th>Price (per gallon)</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Regular Gasoline</td>
+                                    <td>$3.45</td>
+                                    <td class="text-success">+0.1%</td>
+                                </tr>
+                                <tr>
+                                    <td>Diesel</td>
+                                    <td>$4.20</td>
+                                    <td class="text-danger">-0.2%</td>
+                                </tr>
+                                <tr>
+                                    <td>Premium Gasoline</td>
+                                    <td>$4.05</td>
+                                    <td class="text-success">+0.05%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p class="update-time">Updated from national averages (demo data).</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ad-sidebar sticky-top">
+                        <p>Sidebar Ad: Electric Vehicle Incentives</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Daily Analysis & Forecasts</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="blog-post">
+                        <h4>Currency Market Forecast: USD Strengthens Amid Fed Signals</h4>
+                        <p>The US Dollar rose against major currencies today, driven by expectations of interest rate hikes. EUR/USD dipped to 1.08...</p>
+                        <a href="#" class="text-primary">Read More</a>
+                        <small class="text-muted d-block mt-2">Published: Today</small>
+                    </div>
+                    <div class="blog-post">
+                        <h4>Gold Prices Dip as Investors Shift to Stocks</h4>
+                        <p>Gold fell below $1,950 per ounce following strong equity market performance. Analysts predict a rebound if inflation persists...</p>
+                        <a href="#" class="text-primary">Read More</a>
+                        <small class="text-muted d-block mt-2">Published: Yesterday</small>
+                    </div>
+                    <div class="blog-post">
+                        <h4>Fuel Prices Stabilize After OPEC Meeting</h4>
+                        <p>Gasoline prices held steady at $3.45 per gallon post-OPEC decision. Expect slight increases next week due to supply constraints...</p>
+                        <a href="#" class="text-primary">Read More</a>
+                        <small class="text-muted d-block mt-2">Published: 2 Days Ago</small>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ad-sidebar sticky-top">
+                        <p>Sidebar Ad: Subscribe to Premium Forecasts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 PriceHub. All rights reserved. Data provided for informational purposes only.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Simple JS for Demo Update Time -->
+    <script>
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('updateTime').textContent = now.toLocaleTimeString();
+        }
+        updateTime();
+        setInterval(updateTime, 300000); // Update every 5 minutes
+    </script>
+</body>
+</html>
