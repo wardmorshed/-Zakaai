@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="موقع مجاني لأدوات الذكاء الاصطناعي باللغة العربية: كتابة مقالات، تلخيص نصوص، إنشاء سير ذاتية، توليد صور من نصوص، ومدونة عن الذكاء الاصطناعي.">
+    <meta name="keywords" content="ذكاء اصطناعي, أدوات AI, كتابة مقالات, تلخيص نصوص, سيرة ذاتية, توليد صور">
+    <title>BLACKBOX AI - أدوات ذكاء اصطناعي مجانية بالعربية</title>
+    
+    <!-- Google Fonts for Arabic -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS for responsiveness -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            font-family: 'Noto Sans Arabic', sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .navbar-brand {
+            color: #007bff;
+            font-weight: 700;
+        }
+        .nav-link {
+            color: #6c757d;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: #007bff;
+        }
+        .hero {
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 500;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .tool-card {
+            background: white;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        .tool-card:hover {
+            transform: translateY(-5px);
+        }
+        .tool-card h3 {
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .form-control {
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .ad-top {
+            background: #e9ecef;
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .ad-sidebar {
+            background: #e9ecef;
+            padding: 20px;
+            border-radius: 5px;
+            height: fit-content;
+            margin-bottom: 20px;
+        }
+        .blog-post {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .blog-post h4 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .login-form {
+            max-width: 400px;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        footer {
+            background: #343a40;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .tool-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">BLACKBOX AI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">الرئيسية</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">الأدوات</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#article-tool">كتابة مقالات AI</a></li>
+                            <li><a class="dropdown-item" href="#summarizer-tool">تلخيص النصوص</a></li>
+                            <li><a class="dropdown-item" href="#cv-tool">مولد السيرة الذاتية</a></li>
+                            <li><a class="dropdown-item" href="#image-tool">مولد الصور من النص</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">المدونة</a></li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#login">تسجيل الدخول</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#register">التسجيل</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>أدوات ذكاء اصطناعي مجانية وسهلة الاستخدام</h1>
+            <p>اكتشف أدوات AI متقدمة باللغة العربية لكتابة المقالات، تلخيص النصوص، إنشاء السير الذاتية، وتوليد الصور. كل شيء مجاني وسريع!</p>
+            <a href="#tools" class="btn btn-primary btn-lg">ابدأ الآن</a>
+        </div>
+    </section>
+
+    <!-- Top Ad -->
+    <div class="container mt-5">
+        <div class="ad-top">
+            <p>إعلان: دعم الموقع من خلال الإعلانات لتقديم خدمات مجانية.</p>
+            <!-- Placeholder for ad script -->
+        </div>
+    </div>
+
+    <!-- Tools Section -->
+    <section id="tools" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-5">أدوات الذكاء الاصطناعي</h2>
+            
+            <!-- Article Writing Tool -->
+            <div id="article-tool" class="row">
+                <div class="col-lg-8">
+                    <div class="tool-card">
+                        <h3>أداة كتابة المقالات بالذكاء الاصطناعي</h3>
+                        <p>أدخل الموضوع والكلمات المفتاحية للحصول على مقالة كاملة بالعربية.</p>
+                        <form id="articleForm">
+                            <div class="mb-3">
+                                <label for="topic" class="form-label">الموضوع:</label>
+                                <input type="text" class="form-control" id="topic" placeholder="مثال: فوائد الذكاء الاصطناعي">
+                            </div>
+                            <div class="mb-3">
+                                <label for="keywords" class="form-label">الكلمات المفتاحية:</label>
+                                <input type="text" class="form-control" id="keywords" placeholder="AI, تقنية, مستقبل">
+                            </div>
+                            <div class="mb-3">
+                                <label for="length" class="form-label">الطول (كلمات):</label>
+                                <select class="form-select" id="length">
+                                    <option>500</option>
+                                    <option>1000</option>
+                                    <option>1500</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary">كتابة المقالة</button>
+                        </form>
+                        <div id="articleOutput" class="mt-4" style="display:none;">
+                            <h5>المقالة المولدة:</h5>
+                            <p>هنا سيتم عرض المقالة الناتجة عن الذكاء الاصطناعي (محاكاة: مقالة تجريبية عن الموضوع المحدد).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ad-sidebar">
+                        <p>إعلان جانبي: أدوات AI متقدمة.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text Summarization Tool -->
+            <div id="summarizer-tool" class="row mt-5">
+                <div class="col-lg-8">
+                    <div class="tool-card">
+                        <h3>أداة تلخيص النصوص</h3>
+                        <p>أدخل النص الطويل للحصول على تلخيص موجز.</p>
+                        <form id="summarizeForm">
+                            <div class="mb-3">
+                                <label for="text" class="form-label">النص:</label>
+                                <textarea class="form-control" id="text" rows="5" placeholder="أدخل النص هنا..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">تلخيص</button>
+                        </form>
+                        <div id="summaryOutput" class="mt-4" style="display:none;">
+                            <h5>التلخيص:</h5>
+                            <p>هنا التلخيص المختصر (محاكاة: تلخيص النص المقدم).</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ad-sidebar">
+                        <p>إعلان جانبي: تعلم الذكاء الاصطناعي.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resume/CV Generator -->
+            <div id="cv-tool" class="row mt-5">
+                <div class="col-lg-8">
+                    <div class="tool-card">
+                        <h3>مولد السيرة الذاتية / CV</h3>
+                        <p>أدخل بياناتك لإنشاء سيرة ذاتية احترافية.</p>
+                        <form id="cvForm">
+                            <div class="mb-3">
+                                <label for="name" class="form-label">الاسم:</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="mb-3">
+                                <label for="experience" class="form-label">الخبرة:</label>
+                                <textarea class="form-control" id="experience" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">إنشاء CV</button>
+                        </form>
+                        <div id="cvOutput" class="mt-4" style="display:none;">
+                            <h5>السيرة الذاتية:</h5>
+                            <div class="border p-3">
+                                <p><strong>الاسم:</strong> [الاسم]</p>
+                                <p><strong>الخبرة:</strong> [الخبرة]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ad-sidebar">
+                        <p>إعلان جانبي: وظائف في التقنية.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Text-to-Image Generator -->
+            <div id="image-tool" class="row mt-5">
+                <div class="col-lg-8">
+                    <div class="tool-card">
+                        <h3>مولد الصور من النص</h3>
+                        <p>وصف الصورة بالعربية لتوليد صورة AI.</p>
+                        <form id="imageForm">
+                            <div class="mb-3">
+                                <label for="description" class="form-label">وصف الصورة:</label>
+                                <textarea class="form-control" id="description" rows="3" placeholder="مثال: مدينة مستقبلية بالليل"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">توليد الصورة</button>
+                        </form>
+                        <div id="imageOutput" class="mt-4" style="display:none;">
+                            <h5>الصورة المولدة:</h5>
+                            <img src="https://via.placeholder.com/400x300?text=صورة+AI" alt="صورة مولدة" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ad-sidebar">
+                        <p>إعلان جانبي: أدوات تصميم.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section id="blog" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">المدونة: مقالات عن الذكاء الاصطناعي والتقنية</h2>
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="blog-post">
+                        <h4>مستقبل الذكاء الاصطناعي في العالم العربي</h4>
+                        <p>يشهد الذكاء الاصطناعي تطوراً هائلاً، وفي العالم العربي، يلعب دوراً في تحسين التعليم والصحة...</p>
+                        <a href="#" class="text-primary">اقرأ المزيد</a>
+                    </div>
+                    <div class="blog-post">
+                        <h4>كيفية استخدام AI في كتابة المحتوى</h4>
+                        <p>أدوات مثل تلك الموجودة هنا تساعد الكتاب في إنتاج محتوى عالي الجودة بسرعة...</p>
+                        <a href="#" class="text-primary">اقرأ المزيد</a>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="ad-sidebar">
+                        <p>إعلان جانبي: دورات AI.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Login/Register Modal (Simplified as Section for Demo) -->
+    <section id="login" class="py-5">
+        <div class="container">
+            <div class="login-form">
+                <h3 class="text-center mb-4">تسجيل الدخول</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">البريد الإلكتروني:</label>
+                        <input type="email" class="form-control" id="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">كلمة المرور:</label>
+                        <input type="password" class="form-control" id="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">دخول</button>
+                </form>
+                <p class="text-center mt-3">ليس لديك حساب؟ <a href="#register" class="text-primary">سجل الآن</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="register" class="py-5">
+        <div class="container">
+            <div class="login-form">
+                <h3 class="text-center mb-4">التسجيل</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="regName" class="form-label">الاسم:</label>
+                        <input type="text" class="form-control" id="regName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="regEmail" class="form-label">البريد الإلكتروني:</label>
+                        <input type="email" class="form-control" id="regEmail">
+                    </div>
+                    <div class="mb-3">
+                        <label for="regPassword" class="form-label">كلمة المرور:</label>
+                        <input type="password" class="form-control" id="regPassword">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">تسجيل</button>
+                </form>
+           
